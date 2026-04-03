@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Agricultural Advisory System</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌾 Rule-Based Agricultural Advisory System</h1>
+
+<p class="problem">
+Problem Statement: Develop a rule-based agricultural advisory system that recommends suitable crops based on soil type, rainfall and season using forward chaining technique.
+</p>
+
+<div class="form-box">
+
+<form method="POST">
+
+<label>Soil Type</label>
+<select name="soil">
+<option value="black">Black Soil</option>
+<option value="red">Red Soil</option>
+<option value="alluvial">Alluvial Soil</option>
+<option value="clay">Clay Soil</option>
+</select>
+
+<label>Rainfall</label>
+<select name="rainfall">
+<option value="low">Low</option>
+<option value="medium">Medium</option>
+<option value="high">High</option>
+</select>
+
+<label>Season</label>
+<select name="season">
+<option value="kharif">Kharif</option>
+<option value="rabi">Rabi</option>
+<option value="summer">Summer</option>
+</select>
+
+<button type="submit">🌱 Recommend Crop</button>
+
+</form>
+
+</div>
+
+{% if crop %}
+<div class="result">
+<h2>Recommended Crop 🌾</h2>
+<p>{{ crop }}</p>
+</div>
+{% endif %}
+
+</div>
+
+</body>
+</html>
